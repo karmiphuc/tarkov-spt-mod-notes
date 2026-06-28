@@ -1,6 +1,6 @@
 # Pending pitFireTeam Restore - 2026-06-28
 
-Status: restored and server/launcher smoke-tested, pending map-load and raid validation.
+Status: restored and accepted into the stable baseline after user raid validation.
 
 ## Restored Components
 
@@ -70,11 +70,11 @@ Warning observed:
 - `Trader: 67d3a28a3d6f4f7dbd09ed13 not found, generating temp entry with default refresh time of: 3600`
 - This did not block startup, but profile state should be watched because this same trader ID previously needed cleanup when pitFireTeam was disabled.
 
-Not yet verified:
+Accepted:
 
 - EFT client-side plugin load after pressing Play.
 - Map load beyond 60-61%.
-- One full raid without hang or profile/trader errors.
+- User reported the later combined setup stable; this layer is now listed in `stable-state-2026-06-28.md`.
 
 ## Rollback
 
@@ -90,4 +90,3 @@ If the 60-61% loading-map hang returns, disable this group together:
 Then restore or compare against:
 
 - `E:\Tarkov-SPT\_mod_backups\pitfireteam-restore-20260628-185105`
-

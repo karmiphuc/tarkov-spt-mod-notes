@@ -1,6 +1,6 @@
 # Pending Item Info QoL - 2026-06-28
 
-Status: installed and server/launcher smoke-tested, pending user raid validation.
+Status: accepted into the stable baseline after user raid validation.
 
 ## Purpose
 
@@ -48,12 +48,7 @@ Launcher:
 - Connected to `https://127.0.0.1:6969`.
 - Reported `SPT MatchingVersion: 4.0.13`.
 
-Not yet verified:
+Accepted:
 
 - EFT client-side plugin load after pressing Play.
-- One full raid without map-load hang.
-
-## Promotion Rule
-
-Promote this file into `stable-state-2026-06-28.md` only after the user confirms at least one clean raid with the item-info QoL mods enabled.
-
+- User reported the later combined setup stable; this layer is now listed in `stable-state-2026-06-28.md`.

@@ -1,6 +1,6 @@
 # Pending WTT CommonLib Group - 2026-06-28
 
-Status: reduced after client main-menu/profile load failure. `WTT-CommonLib` and `SNACC` remain active; `Handy` and `RestoreTheOldNumberOfMedicalUses` are disabled.
+Status: reduced and accepted into the stable baseline after user validation. `WTT-CommonLib` and `SNACC` remain active; `Handy` and `RestoreTheOldNumberOfMedicalUses` are disabled.
 
 ## Installed Archives
 
@@ -121,10 +121,9 @@ Launcher after profile cleanup:
 - Connected to `https://127.0.0.1:6969`.
 - Reported `SPT MatchingVersion: 4.0.13`.
 
-Still pending:
+Accepted:
 
-- Press Play again and confirm the main menu loads without item deserialization errors.
-- Run one short raid before promoting this reduced set.
+- User reported the later combined setup stable; this reduced set is now listed in `stable-state-2026-06-28.md`.
 
 ## Rollback
 
