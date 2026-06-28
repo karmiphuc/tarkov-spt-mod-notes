@@ -1,6 +1,6 @@
 # Pending PackNStrap / DPX / UseItemsAnywhere Layer - 2026-06-29
 
-Status: installed and server-start verified, but not accepted into the stable baseline yet.
+Status: partially rolled back after item warnings. `DPX-ElectronicsCase` remains active; `WTT-PackNStrap` and `UseItemsAnywhere` are disabled.
 
 ## Installed Archives
 
@@ -30,6 +30,22 @@ Dependency already present:
 
 - `WTT-ServerCommonLib`
 - `WTT-ClientCommonLib`
+
+## Current Active State
+
+Still active:
+
+- `SPT\user\mods\DPX-ElectronicsCase`
+
+Disabled after item warnings:
+
+- `SPT\user\mods\WTT-PackNStrap`
+- `BepInEx\plugins\UseItemsFromAnywhere.dll`
+- `BepInEx\plugins\WTT-PackNStrap`
+
+Disabled location:
+
+- `E:\Tarkov-SPT\_disabled_by_codex\items-error-packnstrap-20260629-051400`
 
 ## Backup Before Install
 
@@ -62,19 +78,27 @@ Warnings seen:
   - `68154651f849fb4e7d816738`
   - `6815465859b8c6ff13f94026`
 
+Follow-up after item warnings:
+
+- Checked the active profile before disabling PackNStrap.
+- Found 44 PackNStrap custom template IDs.
+- Found 0 PackNStrap items in the active profile.
+- Disabled PackNStrap and UseItemsAnywhere as a clean rollback.
+- Restarted SPT server with 20 server mods.
+- Confirmed `WTT-PackNStrapServer` no longer loads.
+- Confirmed the four PackNStrap `ItemBaseClassService` warnings no longer appear in the fresh server-start block.
+- Profile JSON remained valid with 0 orphan inventory references and 0 missing insured-item references.
+
 Not yet verified:
 
-- EFT reaches main menu with the new BepInEx plugins.
+- EFT reaches main menu after PackNStrap removal.
 - One raid loads without a 60-61% map-load hang.
-- New cases/belts render and behave correctly in stash/in raid.
+- `DPX-ElectronicsCase` behaves correctly in stash/in raid.
 
 ## Rollback
 
-If this layer causes startup, menu, profile, stash, item, or raid-load problems, disable these together:
+If the remaining DPX part of this layer causes startup, menu, profile, stash, item, or raid-load problems, disable:
 
 - `SPT\user\mods\DPX-ElectronicsCase`
-- `SPT\user\mods\WTT-PackNStrap`
-- `BepInEx\plugins\UseItemsFromAnywhere.dll`
-- `BepInEx\plugins\WTT-PackNStrap`
 
-Before disabling after acquiring any custom PackNStrap or DPX items, remove those items from the profile/stash when possible. If profile errors appear after removal, compare against the backup above and check for orphan inventory or insured-item references.
+Before disabling after acquiring any DPX items, remove those items from the profile/stash when possible. If profile errors appear after removal, compare against the backup above and check for orphan inventory or insured-item references.

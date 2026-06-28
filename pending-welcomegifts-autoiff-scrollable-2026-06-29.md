@@ -59,11 +59,11 @@ Profile check after server startup:
 Warnings still present:
 
 - Existing pitFireTeam trader warning: `Trader: 67d3a28a3d6f4f7dbd09ed13 not found`.
-- Existing PackNStrap custom item-base warnings for IDs:
-  - `680fce2ec7b9b222270f074c`
-  - `680fd1dae5044e670a092e16`
-  - `68154651f849fb4e7d816738`
-  - `6815465859b8c6ff13f94026`
+
+Follow-up note:
+
+- PackNStrap was later disabled due to item-base warnings.
+- After disabling PackNStrap, the WelcomeGifts layer still loaded with SPT reaching `Server has started, happy playing`.
 
 Not yet verified:
 

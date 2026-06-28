@@ -16,7 +16,7 @@ Historical validation layers folded into the current baseline:
 
 Pending validation layers:
 
-- `pending-packnstrap-dpx-useitems-2026-06-29.md`
+- `pending-packnstrap-dpx-useitems-2026-06-29.md` - PackNStrap/UseItemsAnywhere disabled after item warnings; DPX remains active.
 - `pending-welcomegifts-autoiff-scrollable-2026-06-29.md`
 
 Rule for future mod testing:
