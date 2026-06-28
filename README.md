@@ -10,6 +10,7 @@ Current known-good baseline:
 
 Pending validation layer:
 
+- `pending-commonlib-group-2026-06-28.md`
 - `pending-item-qol-2026-06-28.md`
 - `pending-pitfireteam-2026-06-28.md`
 
