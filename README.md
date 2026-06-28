@@ -17,8 +17,8 @@ Pending validation layers:
 
 - `pending-packnstrap-dpx-useitems-2026-06-29.md` - PackNStrap/UseItemsAnywhere disabled after item warnings; DPX remains active.
 - `pending-welcomegifts-autoiff-scrollable-2026-06-29.md`
-- `pending-pitfireteam-2026-06-28.md` - restored earlier, later disabled again.
-- `pending-pitfireteam-trader-cleanup-2026-06-29.md`
+- `pending-pitfireteam-2026-06-28.md` - restored and treated as must-have.
+- `pending-pitfireteam-trader-cleanup-2026-06-29.md` - profile cleanup history; courier warning is accepted while pitFireTeam is enabled.
 
 Rule for future mod testing:
 
@@ -26,4 +26,6 @@ Rule for future mod testing:
 - Restore or add one disabled mod at a time.
 - Run at least one full raid before accepting it into the stable setup.
 - Avoid re-enabling `WeekendDrops`, `CaliberUnderName`, `ClearPrepareScreen`, `Handy`, or `RestoreTheOldNumberOfMedicalUses` in bulk.
-- Avoid re-enabling pitFireTeam in bulk; it caused the recurring courier `Trader not found` warning.
+- Keep pitFireTeam, BigBrain, and Waypoints together; pitFireTeam is a must-have for this setup.
+- The pitFireTeam courier `Trader not found` startup warning is known and accepted as long as the profile remains clean and the server reaches `Server has started, happy playing`.
+- Prefer library/dependency mods first when adding new server mods. Do not rename live mod folders or force order changes unless a real dependency error appears.

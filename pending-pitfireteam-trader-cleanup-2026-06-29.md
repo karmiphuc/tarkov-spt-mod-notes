@@ -1,6 +1,6 @@
 # Pending pitFireTeam Trader Cleanup - 2026-06-29
 
-Status: pitFireTeam group disabled after recurring `Trader not found` warning.
+Status: pitFireTeam group restored again because it is must-have. The recurring courier `Trader not found` warning is accepted as non-fatal while the profile remains clean.
 
 ## Symptom
 
@@ -35,7 +35,7 @@ After cleanup:
 
 The warning still returned while pitFireTeam remained active, so the source was active pitFireTeam startup behavior rather than only stale profile data.
 
-## Disabled Components
+## Temporary Disable
 
 Disabled location:
 
@@ -48,9 +48,34 @@ Moved out of the active install:
 - `BepInEx\plugins\DrakiaXYZ-BigBrain.dll`
 - `BepInEx\plugins\DrakiaXYZ-Waypoints`
 
+## Must-Have Restore
+
+Restored from:
+
+- `E:\Tarkov-SPT\_disabled_by_codex\trader-not-found-pitfireteam-20260629-051830`
+
+Backup before restoring:
+
+- `E:\Tarkov-SPT\_mod_backups\restore-pitfireteam-musthave-20260629-052119`
+
+Restored components:
+
+- `SPT\user\mods\pitFireTeam-ServerMod`
+- `BepInEx\plugins\pitFireTeam`
+- `BepInEx\plugins\DrakiaXYZ-BigBrain.dll`
+- `BepInEx\plugins\DrakiaXYZ-Waypoints`
+
+Latest startup after restore:
+
+- Loaded `PitFireTeam version: 0.8.5`.
+- Logged `Registered courier trader '67d3a28a3d6f4f7dbd09ed13'`.
+- Logged `PitFireTeam loaded`.
+- Reached `Server has started, happy playing`.
+- The courier `Trader not found` warning returned and is accepted for this setup.
+
 ## Verification
 
-SPT server startup after disabling pitFireTeam:
+SPT server startup after temporarily disabling pitFireTeam:
 
 - Loaded 19 server mods.
 - Did not load `PitFireTeam`.
@@ -65,6 +90,13 @@ Profile check after restart:
 - Orphan inventory references: 0.
 - Missing insured-item references: 0.
 
+Profile check after restoring pitFireTeam again:
+
+- `TradersInfo` still does not contain `67d3a28a3d6f4f7dbd09ed13`.
+- `dialogues` still does not contain `67d3a28a3d6f4f7dbd09ed13`.
+- Orphan inventory references: 0.
+- Missing insured-item references: 0.
+
 ## Current Tradeoff
 
-Keeping pitFireTeam disabled removes the warning and keeps the profile clean, but removes AI teammate functionality. Re-enable the group only if that feature is worth accepting or debugging the courier-trader warning again.
+pitFireTeam is worth keeping for AI teammate functionality. Do not disable it again just for the courier warning; only revisit if it causes a real main-menu, profile, or raid blocker.

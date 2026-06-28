@@ -1,6 +1,6 @@
 # Pending pitFireTeam Restore - 2026-06-28
 
-Status: restored and accepted after user raid validation, then disabled again on 2026-06-29 due to the recurring pitFireTeam courier `Trader not found` warning.
+Status: restored and accepted after user raid validation, temporarily disabled on 2026-06-29 for diagnosis, then restored again because pitFireTeam is must-have.
 
 ## Restored Components
 
@@ -76,7 +76,7 @@ Accepted:
 - Map load beyond 60-61%.
 - User reported the later combined setup stable; this layer is now listed in `stable-state-2026-06-28.md`.
 
-## Later Disable
+## Later Diagnosis
 
 On 2026-06-29, pitFireTeam was disabled again because SPT continued to log:
 
@@ -89,6 +89,22 @@ Profile cleanup alone did not stop the warning. The active pitFireTeam startup r
 See:
 
 - `pending-pitfireteam-trader-cleanup-2026-06-29.md`
+
+## Must-Have Restore
+
+The group was restored again from:
+
+- `E:\Tarkov-SPT\_disabled_by_codex\trader-not-found-pitfireteam-20260629-051830`
+
+Backup before restore:
+
+- `E:\Tarkov-SPT\_mod_backups\restore-pitfireteam-musthave-20260629-052119`
+
+Current decision:
+
+- Keep pitFireTeam enabled.
+- Keep BigBrain and Waypoints with it.
+- Accept the courier `Trader not found` warning as long as startup reaches `Server has started, happy playing` and the profile stays clean.
 
 ## Rollback
 
