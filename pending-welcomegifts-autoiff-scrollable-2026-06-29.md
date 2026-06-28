@@ -1,6 +1,6 @@
 # Pending WelcomeGifts / AutoIFF / ScrollableAttachments Layer - 2026-06-29
 
-Status: installed and server-start verified, but not accepted into the stable baseline yet.
+Status: reported stable so far and folded into the baseline. AutoIFF was adjusted afterward because it loaded but skipped PMC raids with its default activation mode.
 
 ## Installed Archives
 
@@ -21,8 +21,8 @@ Server mod added:
 
 Client plugins added:
 
-- `BepInEx\plugins\maschine-AutoIFF.dll`
 - `BepInEx\plugins\ScrollableAttachments\ScrollableAttachments.dll`
+- `BepInEx\plugins\zzzz-maschine-AutoIFF\maschine-AutoIFF.dll`
 
 Dependency already present:
 
@@ -67,16 +67,31 @@ Follow-up note:
 
 Not yet verified:
 
-- EFT reaches main menu with `maschine-AutoIFF.dll` and `ScrollableAttachments.dll` loaded.
-- WelcomeGifts quests/mail/gift UI behaves correctly.
-- One raid loads without a 60-61% map-load hang.
+- Fresh EFT launch after moving AutoIFF into `zzzz-maschine-AutoIFF`.
+- AutoIFF no longer logs `Skipping activation (mode=Automatic, side=Usec)`.
+
+## AutoIFF Adjustment
+
+Evidence from `BepInEx\LogOutput.log` before the fix:
+
+- AutoIFF loaded before pitFireTeam.
+- AutoIFF logged `Skipping activation (mode=Automatic, side=Usec)` in PMC raids.
+
+Live changes:
+
+- `BepInEx\config\com.maschine.AutoIFF.cfg`: changed `ActivationMode = Automatic` to `ActivationMode = AlwaysOn`.
+- Moved `BepInEx\plugins\maschine-AutoIFF.dll` to `BepInEx\plugins\zzzz-maschine-AutoIFF\maschine-AutoIFF.dll`.
+
+Backup before the AutoIFF change:
+
+- `E:\Tarkov-SPT\_mod_backups\stable-autoiff-20260629-064610`
 
 ## Rollback
 
 If this layer causes startup, menu, quest/mail, profile, or raid-load problems, disable these together:
 
 - `SPT\user\mods\EFCL-WelcomeGifts`
-- `BepInEx\plugins\maschine-AutoIFF.dll`
+- `BepInEx\plugins\zzzz-maschine-AutoIFF`
 - `BepInEx\plugins\ScrollableAttachments`
 
 WelcomeGifts can add gift quests/mail. If any gifts are claimed before rollback, check for profile references before removing the mod permanently.

@@ -1,6 +1,6 @@
 # Pending pitFireTeam Trader Cleanup - 2026-06-29
 
-Status: pitFireTeam group restored again because it is must-have. The recurring courier `Trader not found` warning is accepted as non-fatal while the profile remains clean.
+Status: pitFireTeam group restored again because it is must-have. The recurring courier `Trader not found` warning is accepted as non-fatal while pitFireTeam remains active.
 
 ## Symptom
 
@@ -90,13 +90,21 @@ Profile check after restart:
 - Orphan inventory references: 0.
 - Missing insured-item references: 0.
 
-Profile check after restoring pitFireTeam again:
+Profile check immediately after restoring pitFireTeam again:
 
 - `TradersInfo` still does not contain `67d3a28a3d6f4f7dbd09ed13`.
 - `dialogues` still does not contain `67d3a28a3d6f4f7dbd09ed13`.
 - Orphan inventory references: 0.
 - Missing insured-item references: 0.
 
+Profile check after later stable play:
+
+- `TradersInfo` contains `67d3a28a3d6f4f7dbd09ed13` again.
+- `dialogues` does not contain `67d3a28a3d6f4f7dbd09ed13`.
+- Orphan inventory references: 0.
+- Missing insured-item references: 0.
+- Treat the `TradersInfo` entry as part of active pitFireTeam state; clean it only if pitFireTeam is disabled again.
+
 ## Current Tradeoff
 
-pitFireTeam is worth keeping for AI teammate functionality. Do not disable it again just for the courier warning; only revisit if it causes a real main-menu, profile, or raid blocker.
+pitFireTeam is worth keeping for AI teammate functionality. Do not disable it again just for the courier warning; only revisit if it causes a real main-menu, profile, or raid blocker. If it is disabled, clean courier ID `67d3a28a3d6f4f7dbd09ed13` from `TradersInfo` and `dialogues`.

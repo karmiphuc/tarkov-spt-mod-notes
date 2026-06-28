@@ -5,7 +5,8 @@ Validated by user:
 - Base setup: played 3 raids for about 1 hour with no map-load hang or startup blocker.
 - Added QoL/content batch below: user reported stable so far after install.
 - Later item-info QoL, reduced WTT CommonLib/SNACC layer, and UnderFire tuning are accepted into the current stable baseline.
-- pitFireTeam was restored and is treated as a must-have. Its courier trader startup warning is accepted as non-fatal while the profile remains clean.
+- pitFireTeam was restored and is treated as a must-have. Its courier trader startup warning is accepted as non-fatal while pitFireTeam stays active.
+- WelcomeGifts, AutoIFF, and ScrollableAttachments were reported stable so far on 2026-06-29. AutoIFF was adjusted afterward because it was loading but skipping PMC raids.
 
 ## Install Paths
 
@@ -15,6 +16,7 @@ Validated by user:
 - Original stable snapshot created: `2026-06-28 12:47:45 +08`
 - Current accepted modlist updated: `2026-06-28`, after later validation layers.
 - Current must-have restore updated: `2026-06-29`, after pitFireTeam was restored again.
+- Current stable snapshot saved: `2026-06-29`, before the AutoIFF activation/load-order adjustment.
 
 ## Active Server Mods
 
@@ -65,11 +67,11 @@ Location: `E:\Tarkov-SPT\BepInEx\plugins`
 - `WTT-ClientCommonLib\WTT-ClientCommonLibFika.dll`
 - `com.swiftxp.spt.showmethemoney\SwiftXP.SPT.ShowMeTheMoney.Client.dll`
 - `infinitestash.dll`
-- `maschine-AutoIFF.dll`
 - `ozen-Foldables\Foldables.dll`
 - `pitFireTeam\pitFireTeam.dll`
 - `rpmwpm.UnderFire.dll`
 - SPT core plugins under `spt\`
+- `zzzz-maschine-AutoIFF\maschine-AutoIFF.dll`
 
 ## Active BepInEx Patchers
 
@@ -84,8 +86,24 @@ Location: `E:\Tarkov-SPT\BepInEx\patchers`
 - `SkillsExtended\Resources\Configs\ServerConfig.json`: update check is disabled.
 - `com.rpmwpm.UnderFire.cfg`: adrenaline still triggers from suppression, but tunnel vision and tremor are disabled.
 - Reduced WTT layer is accepted as `WTT-ServerCommonLib`, `WTT-ClientCommonLib`, and `SNACC` only.
-- pitFireTeam is enabled with BigBrain and Waypoints. The startup warning for courier trader `67d3a28a3d6f4f7dbd09ed13` is accepted as long as it remains only a warning and the profile checks stay clean.
+- pitFireTeam is enabled with BigBrain and Waypoints. The startup warning for courier trader `67d3a28a3d6f4f7dbd09ed13` is accepted as long as it remains only a warning and does not block menu or raids.
 - New-mod rollback backup from this batch: `E:\Tarkov-SPT\_mod_backups\newmods-20260628-135126`
+- AutoIFF config: `com.maschine.AutoIFF.cfg` has `ActivationMode = AlwaysOn`. The prior `Automatic` mode logged `Skipping activation (mode=Automatic, side=Usec)` during PMC raids.
+- AutoIFF DLL was moved from plugin root to `BepInEx\plugins\zzzz-maschine-AutoIFF\maschine-AutoIFF.dll` so its path sorts after `pitFireTeam\pitFireTeam.dll`.
+- Stable snapshot / AutoIFF rollback backup: `E:\Tarkov-SPT\_mod_backups\stable-autoiff-20260629-064610`
+
+## Latest Stable Save - 2026-06-29
+
+User reported the current setup stable so far. Before changing AutoIFF, a rollback snapshot was saved with:
+
+- Active client-plugin manifest.
+- Active server-mod manifest.
+- BepInEx config files.
+- Active profile copy.
+- Original root-level `maschine-AutoIFF.dll`.
+- Original `com.maschine.AutoIFF.cfg`.
+
+The live AutoIFF tweak still needs one fresh EFT launch to verify the new BepInEx load line and that AutoIFF no longer skips PMC raids.
 
 ## Observed Server Mod Load Order
 
@@ -148,12 +166,15 @@ These folders are rollback/staging leftovers and should not be treated as the li
 - Later removed reintroduced pitFireTeam courier trader profile/dialogue entries after the warning returned.
 - Later profile backup: `E:\Tarkov-SPT\_mod_backups\profile-cleanup\trader-not-found-pitfireteam-20260629-051724`
 - Restore backup before making pitFireTeam must-have again: `E:\Tarkov-SPT\_mod_backups\restore-pitfireteam-musthave-20260629-052119`
+- Current stable profile check after user play: courier ID `67d3a28a3d6f4f7dbd09ed13` is present in `TradersInfo`, absent from `dialogues`, with 0 orphan inventory refs and 0 missing insured refs.
+- If pitFireTeam is ever disabled again, remove that courier `TradersInfo` entry before treating the profile as clean.
 
 ## Notes
 
 - Keep `DynamicMaps` enabled in this stable baseline; it loaded and worked during the successful test.
 - The added QoL/content batch includes inventory/tooling mods plus `traderJeronimo`; if a future profile issue appears, check trader/profile references before broad disabling.
 - `pitFireTeam`, `BigBrain`, and `Waypoints` are active and should be kept together.
+- Keep AutoIFF in the late-loading `zzzz-maschine-AutoIFF` folder and keep `ActivationMode = AlwaysOn` unless testing Scav-only behavior.
 - Do not re-enable `WeekendDrops`, `CaliberUnderName`, `ClearPrepareScreen`, `Handy`, or `RestoreTheOldNumberOfMedicalUses` without testing one at a time.
-- Accept the pitFireTeam courier trader warning unless it becomes a real main-menu/profile/raid blocker.
+- Accept the pitFireTeam courier trader warning unless it becomes a real main-menu/profile/raid blocker. Do not disable pitFireTeam without cleaning its courier profile entry.
 - If the 60-61% loading-map hang returns, compare against this file first.
