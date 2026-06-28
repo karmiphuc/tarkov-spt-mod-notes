@@ -11,6 +11,7 @@ Current known-good baseline:
 Pending validation layer:
 
 - `pending-item-qol-2026-06-28.md`
+- `pending-pitfireteam-2026-06-28.md`
 
 Rule for future mod testing:
 
