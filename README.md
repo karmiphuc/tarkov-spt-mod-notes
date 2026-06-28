@@ -14,6 +14,10 @@ Historical validation layers folded into the current baseline:
 - `pending-item-qol-2026-06-28.md`
 - `pending-pitfireteam-2026-06-28.md`
 
+Pending validation layers:
+
+- `pending-packnstrap-dpx-useitems-2026-06-29.md`
+
 Rule for future mod testing:
 
 - Keep the stable baseline unchanged.
