@@ -1,6 +1,6 @@
 # Pending pitFireTeam Restore - 2026-06-28
 
-Status: restored and accepted into the stable baseline after user raid validation.
+Status: restored and accepted after user raid validation, then disabled again on 2026-06-29 due to the recurring pitFireTeam courier `Trader not found` warning.
 
 ## Restored Components
 
@@ -76,9 +76,23 @@ Accepted:
 - Map load beyond 60-61%.
 - User reported the later combined setup stable; this layer is now listed in `stable-state-2026-06-28.md`.
 
+## Later Disable
+
+On 2026-06-29, pitFireTeam was disabled again because SPT continued to log:
+
+- `Trader: 67d3a28a3d6f4f7dbd09ed13 not found, generating temp entry with default refresh time of: 3600`
+
+Profile cleanup alone did not stop the warning. The active pitFireTeam startup reintroduced the courier trader behavior, so the whole pitFireTeam group was moved to:
+
+- `E:\Tarkov-SPT\_disabled_by_codex\trader-not-found-pitfireteam-20260629-051830`
+
+See:
+
+- `pending-pitfireteam-trader-cleanup-2026-06-29.md`
+
 ## Rollback
 
-If the 60-61% loading-map hang returns, disable this group together:
+If restoring pitFireTeam again, restore or disable this group together:
 
 - `SPT\user\mods\pitFireTeam-ServerMod`
 - `BepInEx\plugins\pitFireTeam`

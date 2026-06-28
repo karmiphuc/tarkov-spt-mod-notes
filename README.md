@@ -12,12 +12,13 @@ Historical validation layers folded into the current baseline:
 
 - `pending-commonlib-group-2026-06-28.md`
 - `pending-item-qol-2026-06-28.md`
-- `pending-pitfireteam-2026-06-28.md`
 
 Pending validation layers:
 
 - `pending-packnstrap-dpx-useitems-2026-06-29.md` - PackNStrap/UseItemsAnywhere disabled after item warnings; DPX remains active.
 - `pending-welcomegifts-autoiff-scrollable-2026-06-29.md`
+- `pending-pitfireteam-2026-06-28.md` - restored earlier, later disabled again.
+- `pending-pitfireteam-trader-cleanup-2026-06-29.md`
 
 Rule for future mod testing:
 
@@ -25,3 +26,4 @@ Rule for future mod testing:
 - Restore or add one disabled mod at a time.
 - Run at least one full raid before accepting it into the stable setup.
 - Avoid re-enabling `WeekendDrops`, `CaliberUnderName`, `ClearPrepareScreen`, `Handy`, or `RestoreTheOldNumberOfMedicalUses` in bulk.
+- Avoid re-enabling pitFireTeam in bulk; it caused the recurring courier `Trader not found` warning.

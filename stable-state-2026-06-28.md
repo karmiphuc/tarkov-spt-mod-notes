@@ -4,7 +4,8 @@ Validated by user:
 
 - Base setup: played 3 raids for about 1 hour with no map-load hang or startup blocker.
 - Added QoL/content batch below: user reported stable so far after install.
-- Later item-info QoL, pitFireTeam restore, reduced WTT CommonLib/SNACC layer, and UnderFire tuning are accepted into the current stable baseline.
+- Later item-info QoL, reduced WTT CommonLib/SNACC layer, and UnderFire tuning are accepted into the current stable baseline.
+- pitFireTeam was restored and tested, but was disabled again on 2026-06-29 due to the recurring courier trader warning.
 
 ## Install Paths
 
@@ -33,7 +34,6 @@ Location: `E:\Tarkov-SPT\SPT\user\mods`
 - `net.skydust.sptarkovammocases`
 - `ozen-Foldables`
 - `ozen-InstantInsurance`
-- `pitFireTeam-ServerMod`
 - `traderJeronimo`
 - `utjan.AirFilterOnlyDrainsInRaid`
 
@@ -43,8 +43,6 @@ Location: `E:\Tarkov-SPT\BepInEx\plugins`
 
 - `AirFilterQOLClientMod.dll`
 - `BetterBackpacks.dll`
-- `DrakiaXYZ-BigBrain.dll`
-- `DrakiaXYZ-Waypoints\DrakiaXYZ-Waypoints.dll`
 - `DynamicMaps\DynamicMaps.dll`
 - `IcyClawz.MunitionsExpert.dll`
 - `KnifeSprint.dll`
@@ -61,7 +59,6 @@ Location: `E:\Tarkov-SPT\BepInEx\plugins`
 - `com.swiftxp.spt.showmethemoney\SwiftXP.SPT.ShowMeTheMoney.Client.dll`
 - `infinitestash.dll`
 - `ozen-Foldables\Foldables.dll`
-- `pitFireTeam\pitFireTeam.dll`
 - `rpmwpm.UnderFire.dll`
 - SPT core plugins under `spt\`
 
@@ -99,17 +96,25 @@ These folders are rollback/staging leftovers and should not be treated as the li
 - `remove-handy-restore-20260628-215600`
   - disabled `Handy`
   - disabled `RestoreTheOldNumberOfMedicalUses`
+- `trader-not-found-pitfireteam-20260629-051830`
+  - disabled `pitFireTeam-ServerMod`
+  - disabled `pitFireTeam`
+  - disabled `DrakiaXYZ-BigBrain.dll`
+  - disabled `DrakiaXYZ-Waypoints`
 
 ## Profile Cleanup Done
 
 - Removed stale `pitFireTeam` trader reference `67d3a28a3d6f4f7dbd09ed13` from the PMC profile.
 - Profile backup: `E:\Tarkov-SPT\_mod_backups\profile-cleanup\remove-pitfireteam-trader-20260628-112108`
 - Earlier orphan item cleanup backup: `E:\Tarkov-SPT\_mod_backups\profile-cleanup\codex-orphan-cleanup-20260628-110653`
+- Later removed reintroduced pitFireTeam courier trader profile/dialogue entries after the warning returned.
+- Later profile backup: `E:\Tarkov-SPT\_mod_backups\profile-cleanup\trader-not-found-pitfireteam-20260629-051724`
 
 ## Notes
 
 - Keep `DynamicMaps` enabled in this stable baseline; it loaded and worked during the successful test.
 - The added QoL/content batch includes inventory/tooling mods plus `traderJeronimo`; if a future profile issue appears, check trader/profile references before broad disabling.
-- `pitFireTeam`, `BigBrain`, and `Waypoints` are now part of the accepted active baseline. If they break later, disable them as a group and compare against the `pitfireteam-restore-20260628-185105` backup.
+- `pitFireTeam`, `BigBrain`, and `Waypoints` are not active now. They were disabled as a group because pitFireTeam repeatedly logged a missing courier trader warning.
 - Do not re-enable `WeekendDrops`, `CaliberUnderName`, `ClearPrepareScreen`, `Handy`, or `RestoreTheOldNumberOfMedicalUses` without testing one at a time.
+- Do not re-enable pitFireTeam unless explicitly accepting the courier trader warning or testing a fix for it.
 - If the 60-61% loading-map hang returns, compare against this file first.
