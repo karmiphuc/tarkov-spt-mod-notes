@@ -1,6 +1,6 @@
 # Pending WTT CommonLib Group - 2026-06-28
 
-Status: installed and server/launcher smoke-tested, pending client and raid validation.
+Status: reduced after client main-menu/profile load failure. `WTT-CommonLib` and `SNACC` remain active; `Handy` and `RestoreTheOldNumberOfMedicalUses` are disabled.
 
 ## Installed Archives
 
@@ -17,7 +17,7 @@ Copied source archives into `D:\EFTarkov-mods`:
 
 ## Install Order
 
-Installed in this order:
+Originally installed in this order:
 
 1. `WTT-CommonLib-v2.0.20`
 2. `RestoreTheOldNumberOfMedicalUses-1.0.0`
@@ -40,6 +40,32 @@ Client plugin added:
 - `WTT-ClientCommonLib\WTT-ClientCommonLib.dll`
 - `WTT-ClientCommonLib\WTT-ClientCommonLibFika.dll`
 
+## Reduction After Failure
+
+The game failed to load cleanly to main menu after the full 4-mod group was installed. The reduced active set is:
+
+- Keep `WTT-ServerCommonLib`
+- Keep `WTT-ClientCommonLib`
+- Keep `SNACC`
+- Disable `Handy`
+- Disable `RestoreTheOldNumberOfMedicalUses`
+
+Disabled files moved to:
+
+- `E:\Tarkov-SPT\_disabled_by_codex\remove-handy-restore-20260628-215600`
+
+Backup before this reduction:
+
+- `E:\Tarkov-SPT\_mod_backups\remove-handy-restore-20260628-215529`
+
+Profile cleanup after reduction:
+
+- Removed 13 orphan inventory items whose mail/insurance parent stashes no longer existed.
+- Removed 13 matching `InsuredItems` references.
+- Removed `Handy Toolbox` and `RestoreTheOldNumberOfMedicalUses` from the profile's `spt.mods` metadata list.
+- Dedicated profile backup: `E:\Tarkov-SPT\_mod_backups\profile-cleanup\orphan-items-after-handy-20260628-220044`
+- Post-cleanup validation: profile JSON is valid, PMC inventory has 0 orphan parent references, and `InsuredItems` has 0 references to missing items.
+
 ## Backup Before Install
 
 - `E:\Tarkov-SPT\_mod_backups\commonlib-group-20260628-212925`
@@ -53,7 +79,7 @@ This backup includes:
 
 ## Verification
 
-SPT server startup:
+SPT server startup for original 4-mod group:
 
 - Cleaned up duplicate server processes and restarted with one `SPT.Server`.
 - Loaded 20 server mods.
@@ -79,6 +105,27 @@ Not yet verified:
 - EFT client-side plugin load after pressing Play.
 - One full raid without map-load hang or item/profile errors.
 
+## Verification After Reduction
+
+SPT server startup after disabling `Handy` and `RestoreTheOldNumberOfMedicalUses`:
+
+- Loaded 18 server mods.
+- Loaded `SnaccPack version: 1.0.0`.
+- Loaded `WTT-ServerCommonLib version: 2.0.20`.
+- Did not load `Handy Toolbox`.
+- Did not load `RestoreTheOldNumberOfMedicalUses`.
+- Reached `Server has started, happy playing`.
+
+Launcher after profile cleanup:
+
+- Connected to `https://127.0.0.1:6969`.
+- Reported `SPT MatchingVersion: 4.0.13`.
+
+Still pending:
+
+- Press Play again and confirm the main menu loads without item deserialization errors.
+- Run one short raid before promoting this reduced set.
+
 ## Rollback
 
 If this group causes startup, item, or profile problems, disable/remove together:
@@ -92,4 +139,3 @@ If this group causes startup, item, or profile problems, disable/remove together
 Then restore or compare against:
 
 - `E:\Tarkov-SPT\_mod_backups\commonlib-group-20260628-212925`
-
