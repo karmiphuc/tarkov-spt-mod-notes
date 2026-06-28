@@ -4,4 +4,4 @@
 # Track only sanitized documentation.
 !.gitignore
 !README.md
-!stable-state-2026-06-28.md
+!*.md

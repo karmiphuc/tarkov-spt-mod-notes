@@ -8,6 +8,10 @@ Current known-good baseline:
 
 - `stable-state-2026-06-28.md`
 
+Pending validation layer:
+
+- `pending-item-qol-2026-06-28.md`
+
 Rule for future mod testing:
 
 - Keep the stable baseline unchanged.
