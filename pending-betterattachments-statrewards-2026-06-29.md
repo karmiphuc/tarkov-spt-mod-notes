@@ -1,6 +1,6 @@
 # Pending BetterAttachments / StatRewards Layer - 2026-06-29
 
-Status: installed and server-start validated. Not yet accepted into the stable baseline until at least one normal raid is tested.
+Status: accepted into the current stable baseline after user-reported stable play on 2026-06-29.
 
 ## Installed Archives
 
@@ -86,17 +86,21 @@ SPT server startup after install:
 - Reached `Server has started, happy playing`.
 - Validation server process was stopped afterward.
 
+User validation:
+
+- User reported the layer stable so far on 2026-06-29.
+- This layer was folded into `stable-state-2026-06-28.md`.
+- Stable snapshot captured at `E:\Tarkov-SPT\_mod_backups\stable-betterattachments-statrewards-20260629-215157`.
+
 Known warning still present:
 
 - Existing pitFireTeam courier warning remains: `Trader: 67d3a28a3d6f4f7dbd09ed13 not found`.
 - This warning was already accepted while pitFireTeam remains a must-have and did not block startup.
 
-## Not Yet Verified
+## Remaining Watch Items
 
-- EFT reaches main menu with this layer active.
-- One full raid loads without the 60-61% loading-map hang.
-- BetterAttachments values feel mild enough in-game.
 - StatRewards post-raid reward checks behave correctly after a milestone is reached.
+- BetterAttachments values continue to feel mild enough over longer play.
 
 ## Rollback
 

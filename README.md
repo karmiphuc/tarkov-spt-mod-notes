@@ -13,10 +13,10 @@ Historical validation layers folded into the current baseline:
 - `pending-commonlib-group-2026-06-28.md`
 - `pending-item-qol-2026-06-28.md`
 - `pending-welcomegifts-autoiff-scrollable-2026-06-29.md` - stable so far; AutoIFF adjusted to run on PMC and load late.
+- `pending-betterattachments-statrewards-2026-06-29.md` - accepted after user-reported stable play; BetterAttachments ergonomics tuned down from large buffs.
 
 Pending validation layers:
 
-- `pending-betterattachments-statrewards-2026-06-29.md` - installed and server-start validated; BetterAttachments ergonomics tuned from large buffs down to a mild pending-test config.
 - `pending-packnstrap-dpx-useitems-2026-06-29.md` - PackNStrap dependency group disabled after item warnings; DPX remains active.
 - `pending-pitfireteam-2026-06-28.md` - restored and treated as must-have.
 - `pending-pitfireteam-trader-cleanup-2026-06-29.md` - profile cleanup history; courier warning is accepted while pitFireTeam is enabled.

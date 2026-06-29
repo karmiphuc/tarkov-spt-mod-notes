@@ -7,6 +7,7 @@ Validated by user:
 - Later item-info QoL, reduced WTT CommonLib/SNACC layer, and UnderFire tuning are accepted into the current stable baseline.
 - pitFireTeam was restored and is treated as a must-have. Its courier trader startup warning is accepted as non-fatal while pitFireTeam stays active.
 - WelcomeGifts, AutoIFF, and ScrollableAttachments were reported stable so far on 2026-06-29. AutoIFF was adjusted afterward because it was loading but skipping PMC raids.
+- BetterAttachments and StatRewards were accepted on 2026-06-29 after server-start validation and user-reported stable play. BetterAttachments ergonomics are tuned down from the downloaded high-buff config.
 
 ## Install Paths
 
@@ -14,15 +15,17 @@ Validated by user:
 - SPT install: `E:\Tarkov-SPT`
 - Source mod archive folder: `D:\EFTarkov-mods`
 - Original stable snapshot created: `2026-06-28 12:47:45 +08`
-- Current accepted modlist updated: `2026-06-28`, after later validation layers.
+- Current accepted modlist updated: `2026-06-29`, after the BetterAttachments and StatRewards layer was accepted.
 - Current must-have restore updated: `2026-06-29`, after pitFireTeam was restored again.
 - Current stable snapshot saved: `2026-06-29`, before the AutoIFF activation/load-order adjustment.
+- Current locked stage saved: `2026-06-29`, after BetterAttachments and StatRewards were accepted.
 
 ## Active Server Mods
 
 Location: `E:\Tarkov-SPT\SPT\user\mods`
 
 - `[SVM] Server Value Modifier`
+- `BetterAttachments`
 - `DPX-ElectronicsCase`
 - `EFCL-WelcomeGifts`
 - `Infinite-Stash`
@@ -32,6 +35,7 @@ Location: `E:\Tarkov-SPT\SPT\user\mods`
 - `Refringe-BetterBackpacks`
 - `SNACC`
 - `SkillsExtended`
+- `StatRewards`
 - `TKMaida-PostRaidResources`
 - `WTT-ServerCommonLib`
 - `com.swiftxp.spt.showmethemoney`
@@ -91,6 +95,8 @@ Location: `E:\Tarkov-SPT\BepInEx\patchers`
 - AutoIFF config: `com.maschine.AutoIFF.cfg` has `ActivationMode = AlwaysOn`. The prior `Automatic` mode logged `Skipping activation (mode=Automatic, side=Usec)` during PMC raids.
 - AutoIFF DLL was moved from plugin root to `BepInEx\plugins\zzzz-maschine-AutoIFF\maschine-AutoIFF.dll` so its path sorts after `pitFireTeam\pitFireTeam.dll`.
 - Stable snapshot / AutoIFF rollback backup: `E:\Tarkov-SPT\_mod_backups\stable-autoiff-20260629-064610`
+- BetterAttachments config was mass-tuned so existing positive ergonomics buffs target about 10% instead of the downloaded 40-50% range; unchanged categories stayed unchanged. Recoil, heating, and feature toggles were not changed.
+- StatRewards is active with default config and local progress data under its mod folder.
 
 ## Latest Stable Save - 2026-06-29
 
@@ -103,12 +109,40 @@ User reported the current setup stable so far. Before changing AutoIFF, a rollba
 - Original root-level `maschine-AutoIFF.dll`.
 - Original `com.maschine.AutoIFF.cfg`.
 
-The live AutoIFF tweak still needs one fresh EFT launch to verify the new BepInEx load line and that AutoIFF no longer skips PMC raids.
+The later BetterAttachments/StatRewards stable report supersedes the earlier AutoIFF fresh-launch caveat.
+
+## Locked BetterAttachments / StatRewards Stage - 2026-06-29
+
+User reported the current setup stable so far after adding BetterAttachments and StatRewards. A rollback snapshot was saved with:
+
+- Active server-mod manifest.
+- Active client-plugin manifest.
+- Active BepInEx patcher manifest.
+- BepInEx config files.
+- Active profile copy.
+- Tuned BetterAttachments config.
+- StatRewards config and progress data.
+- Server-start validation evidence.
+
+Snapshot path:
+
+- `E:\Tarkov-SPT\_mod_backups\stable-betterattachments-statrewards-20260629-215157`
+
+Server validation before acceptance:
+
+- Loaded 22 server mods.
+- Loaded `BetterAttachments version: 1.0.0`.
+- Loaded `StatRewards version: 1.1.1`.
+- `StatRewards` loaded 48 milestone definitions.
+- `BetterAttachments` updated 1092 attachments.
+- Reached `Server has started, happy playing`.
+- Existing pitFireTeam courier warning remained the only known warning in the validation evidence.
 
 ## Observed Server Mod Load Order
 
-Latest restored pitFireTeam startup loaded the server mods in this order:
+Latest accepted BetterAttachments/StatRewards startup loaded the server mods in this order:
 
+- `BetterAttachments`
 - `Show Me The Money`
 - `DPX Electronics Case`
 - `Welcome Gifts`
@@ -124,6 +158,7 @@ Latest restored pitFireTeam startup loaded the server mods in this order:
 - `BetterBackpacks`
 - `Skills Extended`
 - `SnaccPack`
+- `StatRewards`
 - `PostRaidResources`
 - `Trader Jeronimo`
 - `AirFilter Only Drains In Raid`
