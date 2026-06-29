@@ -151,6 +151,10 @@ These folders are rollback/staging leftovers and should not be treated as the li
 - `remove-handy-restore-20260628-215600`
   - disabled `Handy`
   - disabled `RestoreTheOldNumberOfMedicalUses`
+- `items-error-packnstrap-20260629-051400`
+  - disabled `WTT-PackNStrap`
+  - disabled `WTT-PackNStrap` client plugins
+  - disabled dependency `UseItemsFromAnywhere.dll`
 - `trader-not-found-pitfireteam-20260629-051830`
   - old disabled copy of `pitFireTeam-ServerMod`
   - old disabled copy of `pitFireTeam`
@@ -174,6 +178,7 @@ These folders are rollback/staging leftovers and should not be treated as the li
 - Keep `DynamicMaps` enabled in this stable baseline; it loaded and worked during the successful test.
 - The added QoL/content batch includes inventory/tooling mods plus `traderJeronimo`; if a future profile issue appears, check trader/profile references before broad disabling.
 - `pitFireTeam`, `BigBrain`, and `Waypoints` are active and should be kept together.
+- `UseItemsFromAnywhere.dll` belongs with the disabled PackNStrap group; do not restore PackNStrap without it.
 - Keep AutoIFF in the late-loading `zzzz-maschine-AutoIFF` folder and keep `ActivationMode = AlwaysOn` unless testing Scav-only behavior.
 - Do not re-enable `WeekendDrops`, `CaliberUnderName`, `ClearPrepareScreen`, `Handy`, or `RestoreTheOldNumberOfMedicalUses` without testing one at a time.
 - Accept the pitFireTeam courier trader warning unless it becomes a real main-menu/profile/raid blocker. Do not disable pitFireTeam without cleaning its courier profile entry.

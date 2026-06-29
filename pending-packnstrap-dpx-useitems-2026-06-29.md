@@ -1,6 +1,6 @@
 # Pending PackNStrap / DPX / UseItemsAnywhere Layer - 2026-06-29
 
-Status: partially rolled back after item warnings. `DPX-ElectronicsCase` remains active; `WTT-PackNStrap` and `UseItemsAnywhere` are disabled.
+Status: partially rolled back after item warnings. `DPX-ElectronicsCase` remains active; the `WTT-PackNStrap` dependency group is disabled.
 
 ## Installed Archives
 
@@ -25,6 +25,8 @@ Client plugins added:
 - `BepInEx\plugins\UseItemsFromAnywhere.dll`
 - `BepInEx\plugins\WTT-PackNStrap\Trenchfoot-BeltSlot.dll`
 - `BepInEx\plugins\WTT-PackNStrap\WTT-PackNStrap.dll`
+
+`UseItemsFromAnywhere.dll` is treated as a PackNStrap dependency in this setup. Do not test PackNStrap without restoring it too.
 
 Dependency already present:
 
@@ -83,7 +85,7 @@ Follow-up after item warnings:
 - Checked the active profile before disabling PackNStrap.
 - Found 44 PackNStrap custom template IDs.
 - Found 0 PackNStrap items in the active profile.
-- Disabled PackNStrap and UseItemsAnywhere as a clean rollback.
+- Disabled PackNStrap and its UseItemsAnywhere dependency as a clean rollback.
 - Restarted SPT server with 20 server mods.
 - Confirmed `WTT-PackNStrapServer` no longer loads.
 - Confirmed the four PackNStrap `ItemBaseClassService` warnings no longer appear in the fresh server-start block.
@@ -102,3 +104,13 @@ If the remaining DPX part of this layer causes startup, menu, profile, stash, it
 - `SPT\user\mods\DPX-ElectronicsCase`
 
 Before disabling after acquiring any DPX items, remove those items from the profile/stash when possible. If profile errors appear after removal, compare against the backup above and check for orphan inventory or insured-item references.
+
+## PackNStrap Retest Rule
+
+If retesting PackNStrap, restore this dependency group together:
+
+- `SPT\user\mods\WTT-PackNStrap`
+- `BepInEx\plugins\WTT-PackNStrap`
+- `BepInEx\plugins\UseItemsFromAnywhere.dll`
+
+The normal acquisition route for PackNStrap items is traders, not static loot or bots. Test one short raid before accepting the group back into the stable baseline.
