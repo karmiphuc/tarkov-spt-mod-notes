@@ -16,6 +16,7 @@ Historical validation layers folded into the current baseline:
 
 Pending validation layers:
 
+- `pending-betterattachments-statrewards-2026-06-29.md` - installed and server-start validated; BetterAttachments ergonomics tuned from large buffs down to a mild pending-test config.
 - `pending-packnstrap-dpx-useitems-2026-06-29.md` - PackNStrap dependency group disabled after item warnings; DPX remains active.
 - `pending-pitfireteam-2026-06-28.md` - restored and treated as must-have.
 - `pending-pitfireteam-trader-cleanup-2026-06-29.md` - profile cleanup history; courier warning is accepted while pitFireTeam is enabled.
